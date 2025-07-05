@@ -1,0 +1,76 @@
+name: "🔧 koboloadeR Modernization Task"
+description: Use this template to track modernization of the koboloadeR package
+title: "[Modernization] "
+labels: ["refactor", "modernization", "technical-debt"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 🧰 koboloadeR Modernization Checklist
+        Please check off tasks as you complete them.
+
+  - type: checkboxes
+    id: setup
+    attributes:
+      label: 📦 Package Setup
+      options:
+        - label: Clone repo and open in RStudio
+        - label: Run `devtools::check()` and save output
+        - label: Set up `renv` and snapshot dependencies
+
+  - type: checkboxes
+    id: dependencies
+    attributes:
+      label: 📚 Dependency & Codebase Modernization
+      options:
+        - label: Update DESCRIPTION and NAMESPACE
+        - label: Replace deprecated tidyverse functions
+        - label: Fix use of outdated Excel packages (`xlsx`, etc.)
+
+  - type: checkboxes
+    id: paths
+    attributes:
+      label: 📁 File Path Refactor
+      options:
+        - label: Replace hardcoded paths with `here::here()` or `fs::path()`
+
+  - type: checkboxes
+    id: xlsform
+    attributes:
+      label: 📄 XLSForm Metadata Extensions
+      options:
+        - label: Define JSON/YAML schema for XLSForm metadata
+        - label: Write validation function for `analysis`, `disaggregation`, etc.
+
+  - type: checkboxes
+    id: testing
+    attributes:
+      label: 🧪 Testing Infrastructure
+      options:
+        - label: Create `tests/testthat/` structure
+        - label: Add unit tests for key functions
+        - label: Add mock data for tests
+
+  - type: checkboxes
+    id: reporting
+    attributes:
+      label: 📈 Reporting Modernization
+      options:
+        - label: Identify existing templates (`.Rmd`, `.docx`, etc.)
+        - label: Convert to modern `quarto` or `rmarkdown` workflows
+
+  - type: checkboxes
+    id: ci
+    attributes:
+      label: 🚀 Continuous Integration
+      options:
+        - label: Add GitHub Actions workflow for R CMD check
+        - label: Auto-run tests on pull requests
+
+  - type: input
+    id: notes
+    attributes:
+      label: 📌 Additional Notes
+      description: Anything you'd like to document here?
